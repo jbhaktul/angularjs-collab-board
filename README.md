@@ -9,12 +9,13 @@ Clone the angularjs-collab-board repository, run `npm install` to grab the depen
 
 ### Running the app
 
-Runs like a typical express app:
+    npm start
 
-    node app.js
-    
+And you should see this:
+
+![Frontpage of Website](https://raw.githubusercontent.com/jbhaktul/angularjs-collab-board/master/frontpage.PNG)
+
 ## Resources
 For more information on AngularJS please check out http://angularjs.org/
 For more on Express and Jade, http://expressjs.com/ and http://jade-lang.com/ are your friends.
-Big ups to my friend Brian Ford for his Socket.io seed which got me started
-https://github.com/btford/angular-socket-io-seed 
+Socket.io seed - https://github.com/btford/angular-socket-io-seed
