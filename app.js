@@ -2,10 +2,10 @@ var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server);
-
-app.configure(function() {
-    app.use(express.static(__dirname + '/public'));
-});
+	var path = require('path');
+	
+	app.set('port', process.env.PORT || 3000);
+	app.use(express.static(path.join(__dirname, 'public')));
 
 io.sockets.on('connection', function(socket) {
 	socket.on('createNote', function(data) {
@@ -25,4 +25,6 @@ io.sockets.on('connection', function(socket) {
 	});
 });
 
-server.listen(1337);
+server.listen(app.get('port'), function () {
+	console.log('Express server listening on port ' + app.get('port'))
+});
