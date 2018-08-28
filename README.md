@@ -11,7 +11,7 @@ Clone the angularjs-collab-board repository, run `npm install` to grab the depen
 
     npm start
 
-And you should see this:
+And you should see this (try it with multiple browsers):
 
 ![Frontpage of Website](https://raw.githubusercontent.com/jbhaktul/angularjs-collab-board/master/frontpage.PNG)
 
