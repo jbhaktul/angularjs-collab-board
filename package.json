@@ -9,6 +9,7 @@
   },
   "subdomain": "simpulton.angularjs-collab-board",
   "scripts": {
-    "start": "start http://localhost:3000 && node app.js"
+    "start": "node app.js",
+    "dev": "lite-server /public"
   }
 }

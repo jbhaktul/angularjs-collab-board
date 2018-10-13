@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="app">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <head>
 	<title>AngularJS CollabBoard</title>
-	
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-	<script src="/js/collab-board.js"></script>	
 
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/app.css">
 </head>
+
 <body ng-controller="MainCtrl">
-	<div class="navbar navbar-inverse">
-		<div class="navbar-inner">
-			<a class="brand" href="#">AngularJS CollabBoard</a>
-			<button id="createButton" ng-click="createNote()" class="btn btn-info pull-right">Create Note</button>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div id="navbar-header">
+				<a class="navbar-brand" href="#">AngularJS CollabBoard</a>
+			</div>
+			<div id="navbar">
+				<form class="navbar-form navbar-right">
+					<button id="createButton" ng-click="createNote()" class="btn btn-info">Create Note</button>
+				</form>
+			</div>
 		</div>
-	</div>
-	<div sticky-note ng-repeat="note in notes" note="note" class="alert alert-block sticky-note" ondelete="deleteNote(id)">
+	</nav>
+	<div sticky-note ng-repeat="note in notes" note="note" class="alert alert-warning sticky-note" ondelete="deleteNote(id)">
 		<button type="button" class="close" ng-click="deleteNote(note.id)">&times;</button>
-		<input ng-model="note.title" ng-change="updateNote(note)" type="text" class="title" >
+		<input ng-model="note.title" ng-change="updateNote(note)" type="text" class="title">
 		<textarea ng-model="note.body" ng-change="updateNote(note)" class="body">{{note.body}}</textarea>
 	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+	<script src="/js/collab-board.js"></script>
 </body>
+
 </html>

@@ -24,7 +24,7 @@ app.directive('stickyNote', function(socket) {
 
 			// Some DOM initiation to make it nice
 			element.css('left', '10px');
-			element.css('top', '50px');
+			element.css('top', '60px');
 			element.hide().fadeIn();
 		};
 
