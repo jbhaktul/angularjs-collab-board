@@ -1,7 +1,6 @@
 {
   "name": "angular-collab-board",
   "description": "AngularJS Collobaration Board",
-  "version": "0.0.1-1",
   "private": true,
   "dependencies": {
     "express": "^4.16.3",
