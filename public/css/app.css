@@ -2,12 +2,12 @@ body {
 	background: url(/images/bg_corkboard.jpg) top left repeat fixed;
 }
 
-.sticky-note {
+.sticky-note-class {
 	position: absolute;
 	
 }
 
-.sticky-note .title {
+.sticky-note-class .title {
 	background: transparent;
 	border: none;
 	display: block;
@@ -15,8 +15,12 @@ body {
 	font-weight: bold;
 }
 
-.sticky-note .body {
+.sticky-note-class .body {
 	background: transparent;
 	border: none;
 	display: block;
+}
+
+textarea{
+	width: 100%;
 }

@@ -13,25 +13,24 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div id="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#siteNavBar" >
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
 				<a class="navbar-brand" href="#">AngularJS CollabBoard</a>
 			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="siteNavBar">
 				<form class="navbar-form navbar-right">
 					<button id="createButton" ng-click="createNote()" class="btn btn-info">Create Note</button>
 				</form>
 			</div>
 		</div>
 	</nav>
-	<div sticky-note ng-repeat="note in notes" note="note" class="alert alert-warning sticky-note" ondelete="deleteNote(id)" style="padding-top: 35px;">
+	<div sticky-note ng-repeat="note in notes" note="note" class="alert alert-warning sticky-note-class" ondelete="deleteNote(id)">
 		<button type="button" class="close" ng-click="deleteNote(note.id)">&times;</button>
 		<input ng-model="note.title" ng-change="updateNote(note)" type="text" class="title"></input>
-		<textarea ng-model="note.body" ng-change="updateNote(note)" class="body">{{note.body}}</textarea>
+		<textarea ng-model="note.body" rows="6" ng-change="updateNote(note)" class="body">{{note.body}}</textarea>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>

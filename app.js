@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
-io.sockets.on('connection', function(socket) {
+io.on('connection', function(socket) {
 	socket.on('createNote', (data) => socket.broadcast.emit('onNoteCreated', data));
 
 	socket.on('updateNote', (data) => socket.broadcast.emit('onNoteUpdated', data));

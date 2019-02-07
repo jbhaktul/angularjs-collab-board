@@ -115,6 +115,7 @@ app.controller('MainCtrl', function($scope, socket) {
 		socket.emit('deleteNote', {id: id});
 	};
 
+
 	$scope.handleDeletedNoted = function(id) {
 		var oldNotes = $scope.notes,
 		newNotes = [];
