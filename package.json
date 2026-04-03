@@ -10,9 +10,14 @@
   "subdomain": "simpulton.angularjs-collab-board",
   "scripts": {
     "start": "node app.js",
-    "dev": "lite-server /public"
+    "dev": "nodemon app.js",
+    "serve:public": "lite-server --baseDir=public"
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "nodemon": "^3.1.14"
   }
 }

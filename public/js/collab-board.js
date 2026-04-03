@@ -23,8 +23,8 @@ app.directive('stickyNote', function(socket) {
 			});
 
 			// Some DOM initiation to make it nice
-			element.css('left', '10px');
-			element.css('top', '60px');
+			element.css('left', (scope.note.x || 10) + 'px');
+			element.css('top', (scope.note.y || 60) + 'px');
 			element.hide().fadeIn();
 		};
 
@@ -103,10 +103,13 @@ app.controller('MainCtrl', function($scope, socket) {
 
 	// Outgoing
 	$scope.createNote = function() {
+		var offset = ($scope.notes.length * 15) % 150;
 		var note = {
 			id: new Date().getTime(),
 			title: 'New Note',
-			body: 'Pending'
+			body: 'Pending',
+			x: 10 + offset,
+			y: 60 + offset
 		};
 
 		$scope.notes.push(note);

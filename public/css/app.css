@@ -1,26 +1,133 @@
 body {
 	background: url(/images/bg_corkboard.jpg) top left repeat fixed;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	color: #212529;
+}
+
+/* Subtle overlay to soften the corkboard texture */
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.05); /* Slight darkening for better contrast */
+	z-index: -1;
+}
+
+.main-container {
+	min-height: 100vh;
+	position: relative;
+	padding-top: 80px; 
 }
 
 .sticky-note-class {
 	position: absolute;
-	
+	width: 300px;
+	background-color: #ffffff;
+	border-radius: 16px !important;
+	transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+	cursor: grab;
+	z-index: 10;
+	/* Add subtle paper-like border */
+	border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.sticky-note-class:active {
+	cursor: grabbing;
+	transform: scale(1.02);
+	z-index: 100;
+}
+
+.sticky-note-class:hover {
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12) !important;
+}
+
+.sticky-note-class .card-body {
+	padding: 1.25rem;
 }
 
 .sticky-note-class .title {
 	background: transparent;
 	border: none;
-	display: block;
-	font-size: 20px;
-	font-weight: bold;
+	width: 85%;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #1a1a1a;
+	padding: 0;
+	outline: none;
+	margin-bottom: 0.5rem;
+}
+
+.sticky-note-class .title::placeholder {
+	color: #adb5bd;
 }
 
 .sticky-note-class .body {
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: #4b5563;
+	resize: none;
 	background: transparent;
 	border: none;
-	display: block;
+	outline: none;
+	padding: 0;
+	min-height: 120px;
 }
 
-textarea{
-	width: 100%;
+.sticky-note-class .body:focus {
+	box-shadow: none;
+	background: transparent;
+}
+
+.sticky-note-class .btn-close {
+	width: 0.7rem;
+	height: 0.7rem;
+	opacity: 0.3;
+	transition: opacity 0.2s, transform 0.2s;
+}
+
+.sticky-note-class .btn-close:hover {
+	opacity: 1;
+	transform: scale(1.1);
+	color: #dc3545;
+}
+
+/* Custom scrollbar for textareas */
+.sticky-note-class .body::-webkit-scrollbar {
+	width: 4px;
+}
+
+.sticky-note-class .body::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.sticky-note-class .body::-webkit-scrollbar-thumb {
+	background: #e2e8f0;
+	border-radius: 10px;
+}
+
+.navbar {
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	background-color: rgba(31, 41, 55, 0.9) !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-brand {
+	letter-spacing: -0.5px;
+	font-size: 1.25rem;
+}
+
+#createButton {
+	font-weight: 600;
+	letter-spacing: 0.2px;
+	box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+	transition: all 0.2s;
+}
+
+#createButton:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(13, 110, 253, 0.35);
 }
