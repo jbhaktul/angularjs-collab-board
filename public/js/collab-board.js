@@ -89,6 +89,10 @@ app.controller('MainCtrl', function($scope, socket) {
 	$scope.notes = [];
 
 	// Incoming
+	socket.on('allNotes', function(data) {
+		$scope.notes = data;
+	});
+
 	socket.on('onNoteCreated', function(data) {
 		$scope.notes.push(data);
 	});

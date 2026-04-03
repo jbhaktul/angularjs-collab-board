@@ -3,12 +3,16 @@
   "description": "AngularJS Collobaration Board",
   "private": true,
   "dependencies": {
-    "express": "^4.16.3",
-    "socket.io": "^2.1.1"
+    "express": "^4.21.2",
+    "mongoose": "^8.9.0",
+    "socket.io": "^4.8.1"
   },
   "subdomain": "simpulton.angularjs-collab-board",
   "scripts": {
     "start": "node app.js",
     "dev": "lite-server /public"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
