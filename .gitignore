@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# Local database/notes fallback
+notes.json
