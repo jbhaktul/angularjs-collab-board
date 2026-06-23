@@ -116,6 +116,10 @@ app.controller('MainCtrl', function($scope, socket) {
 		socket.emit('createNote', note);
 	};
 
+	$scope.updateNote = function(note) {
+		socket.emit('updateNote', note);
+	};
+
 	$scope.deleteNote = function(id) {
 		$scope.handleDeletedNoted(id);
 
